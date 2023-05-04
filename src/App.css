@@ -68,3 +68,7 @@ h1 {
   margin-bottom: 1rem;
   cursor: pointer;
 }
+
+.fa-trash {
+  margin-left: 0.75rem;
+}

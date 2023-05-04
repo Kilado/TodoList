@@ -11,12 +11,21 @@ export default function TodoWrapper() {
     setTodos([...todos, { id: uuidv4(), todo: task, isEditing: false }]);
   };
 
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
   return (
     <div className="TodoWrapper">
       <h1>Get Thing Done!</h1>
       <TodoForm addTodo={addTodo} />
       {todos.map((todo) => (
-        <Todo key={todo.id} id={todo.id} todo={todo.todo} />
+        <Todo
+          key={todo.id}
+          id={todo.id}
+          todo={todo.todo}
+          deleteTodo={deleteTodo}
+        />
       ))}
     </div>
   );
